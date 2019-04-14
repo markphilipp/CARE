@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/markphilipp/CARE/issues"
   },
-  "homepage": "https://github.com/markphilipp/CARE#readme"
+  "homepage": "https://github.com/markphilipp/CARE#readme",
+  "devDependencies": {
+    "less": "^3.9.0"
+  }
 }

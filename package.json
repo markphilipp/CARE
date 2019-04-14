@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/markphilipp/CARE#readme",
   "devDependencies": {
-    "less": "^3.9.0"
+    "@types/jquery": "^3.3.29",
+    "less": "^3.9.0",
+    "typescript": "^3.4.3"
   }
 }

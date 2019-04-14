@@ -30,7 +30,7 @@
 }
 /*****	  BODY 	*******/
 body {
-  background-color: #eae8e8;
+  background-color: "#eae8e8";
 }
 /*****    FOOTER FIX    *****/
 #bodyContainer {
@@ -38,13 +38,17 @@ body {
 }
 #footerContent,
 #footerContent a {
-  color: white !important;
+  background-color: "#eae8e8";
 }
 #footerMenu {
   min-height: initial;
 }
 #footer {
   background: #333;
+}
+#subFooter,
+#footerOrgEmail {
+  color: "black";
 }
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {

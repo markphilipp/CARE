@@ -5,7 +5,7 @@
 }
 .sidebarBox .heading {
   text-align: center;
-  background-color: #CDF5A9;
+  background-color: initial;
 }
 #logoContainer {
   background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627n6yhtskaxg1.png');
@@ -25,12 +25,12 @@
   color: #0066CC;
   text-align: center;
 }
-#headerMenu a {
-  color: #0066CC;
+#headerMenu {
+  display: none;
 }
 /*****	  BODY 	*******/
 body {
-  background-color: "#eae8e8";
+  background-color: #eae8e8;
 }
 /*****    FOOTER FIX    *****/
 #bodyContainer {
@@ -38,7 +38,7 @@ body {
 }
 #footerContent,
 #footerContent a {
-  background-color: "#eae8e8";
+  background-color: #eae8e8;
 }
 #footerMenu {
   min-height: initial;
@@ -47,8 +47,13 @@ body {
   background: #333;
 }
 #subFooter,
-#footerOrgEmail {
-  color: "black";
+#footerOrgEmail > a {
+  color: black;
+}
+#footerOrgEmail > a:active,
+#footerOrgEmail > a:visited,
+#footerOrgEmail > a:link {
+  color: black;
 }
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {
@@ -57,16 +62,21 @@ body {
   flex-direction: row;
   align-items: center;
 }
+.highlighted .animalimg {
+  min-width: 400px;
+}
 .highlightedPicture {
   width: auto;
 }
 .animalimg {
-  min-width: 225px;
   height: auto !important;
   border-radius: 5px;
   -moz-box-shadow: 2px 2px 5px #bfbdbd;
   -webkit-box-shadow: 2px 2px 5px #bfbdbd;
   box-shadow: 2px 2px 5px #bfbdbd;
+}
+.highlightedInfo {
+  width: auto;
 }
 .animalimg:hover {
   -moz-box-shadow: 5px 5px 0 #bfbdbd;

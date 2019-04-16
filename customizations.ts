@@ -1,3 +1,5 @@
+import 'updated-styles.less';
+
 window.document.onload = () => {
   removeFooterLinks();
   addHomeLink();
@@ -16,9 +18,9 @@ const removeFooterLinks = () => {
 };
 
 const addHomeLink = () => {
-  $('#logoContainer').attr('href', '/');
+  $('#logoContainer')
+    .on('click', () => window.location.pathname = '/');
 };
-
 // const highlightedAnimalNames = () => {
 //   const animalNames = $('.highlightedPicture img')
 //     .map((index, img) => img.getAttribute('alt'))

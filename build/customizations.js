@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("updated-styles.less");
 window.document.onload = function () {
     removeFooterLinks();
     addHomeLink();
@@ -12,7 +15,8 @@ var removeFooterLinks = function () {
         .remove();
 };
 var addHomeLink = function () {
-    $('#logoContainer').attr('href', '/');
+    $('#logoContainer')
+        .on('click', function () { return window.location.pathname = '/'; });
 };
 // const highlightedAnimalNames = () => {
 //   const animalNames = $('.highlightedPicture img')

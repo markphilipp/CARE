@@ -1,5 +1,6 @@
 window.document.onload = () => {
   removeFooterLinks();
+  addHomeLink();
 };
 
 const removeFooterLinks = () => {
@@ -13,3 +14,13 @@ const removeFooterLinks = () => {
     .parent()
     .remove();
 };
+
+const addHomeLink = () => {
+  $('#logoContainer').attr('href', '/');
+};
+
+// const highlightedAnimalNames = () => {
+//   const animalNames = $('.highlightedPicture img')
+//     .map((index, img) => img.getAttribute('alt'))
+//   //TODO:
+// }

@@ -1,8 +1,8 @@
-window.document.onload = function () {
+jQuery(function () {
     removeFooterLinks();
     addHomeLink();
     highlightedAnimalNames();
-};
+});
 var removeFooterLinks = function () {
     var linksToKeep = ['FAQs', 'About Us', 'Contact Us', 'Donation Info'];
     $('.menuBottomFirst > a, .menuBottom > a')

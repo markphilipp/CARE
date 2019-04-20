@@ -1,28 +1,43 @@
-import 'updated-styles.less';
-
 window.document.onload = () => {
   removeFooterLinks();
   addHomeLink();
+  highlightedAnimalNames();
 };
 
 const removeFooterLinks = () => {
   const linksToKeep = ['FAQs', 'About Us', 'Contact Us', 'Donation Info'];
 
-  const filter = linksToKeep.map(linkText => `:contains("${linkText}")`)
-    .join(", ");
+  $('.menuBottomFirst > a, .menuBottom > a')
+    .each((_, link) => {
+      const parent = $(link).parent();
 
-  $('.menuBottom > a')
-    .filter(filter)
-    .parent()
-    .remove();
+      // Remove links we don't want to keep
+      if (linksToKeep.indexOf(link.innerText) === -1) {
+        parent.remove();
+        return;
+      }
+
+      // Remove pipes from links
+      if (parent.get(0).innerText.substring(0, 4) === " |  ") {
+        parent.contents()
+          .filter((_, e) => e.nodeType === Node.TEXT_NODE)
+          .replaceWith('');
+      }
+    })
 };
 
 const addHomeLink = () => {
   $('#logoContainer')
     .on('click', () => window.location.pathname = '/');
 };
-// const highlightedAnimalNames = () => {
-//   const animalNames = $('.highlightedPicture img')
-//     .map((index, img) => img.getAttribute('alt'))
-//   //TODO:
-// }
+
+const highlightedAnimalNames = () => {
+  $('.highlighted img.animalimg')
+    .each((_, element) => {
+      const name = $(element).attr('alt');
+
+      $(element).closest('.highlighted')
+        .find('.highlightedInfo')
+        .prepend(`<h2 class="highlightedPetName">${name}</h2>`);
+    });
+};

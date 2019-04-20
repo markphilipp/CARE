@@ -43,6 +43,11 @@ body {
 }
 #footerMenu {
   min-height: initial;
+  display: flex;
+  justify-content: center;
+}
+#footerMenu .menuBottom {
+  margin: 0 15px;
 }
 #footer {
   background: #333;
@@ -71,7 +76,7 @@ body {
 }
 /***** MISSION STATEMENT ******/
 .missionStatement {
-  font-size: 18px;
+  font-size: 16px;
 }
 .registrationInfo {
   font-style: italic;

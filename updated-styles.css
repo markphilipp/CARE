@@ -7,20 +7,36 @@
   text-align: center;
   background-color: initial;
 }
-#logoContainer {
-  background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627n6yhtskaxg1.png');
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 15px 15px;
+}
+.header div {
+  display: flex;
+}
+.header .siteLogo {
+  width: 25%;
+  margin-right: 10px;
+}
+.header .siteHeader {
+  width: 75%;
+}
+.header img {
+  width: 100%;
+  align-self: center;
+}
+.logo {
+  background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png');
   width: 25%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
 }
-#header tbody tr {
-  height: 200px;
-}
-#header tbody {
-  border: none;
-  background: inherit;
+#header {
+  display: none;
 }
 #headerOrgInfo {
   color: #0066CC;
@@ -121,4 +137,5 @@ body {
   -moz-box-shadow: 6px 6px 26px -5px #c2c2c2;
   box-shadow: 6px 6px 26px -5px #c2c2c2;
 }
+/******** NAVIGATION *******/
 /*# sourceMappingURL=updated-styles.css.map */

@@ -11,8 +11,33 @@
 	background-color: initial;
 }
 
-#logoContainer {
-	background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627n6yhtskaxg1.png');
+.header {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	padding: 15px 15px;
+
+	div {
+		display: flex;
+	}
+
+	.siteLogo {
+		width: 25%;
+		margin-right: 10px;
+	}
+
+	.siteHeader {
+		width: 75%;
+	}
+
+	img {
+		width: 100%;
+		align-self: center;
+	}
+}
+
+.logo {
+	background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png');
     width: 25%;
     background-repeat: no-repeat;
     background-position: center;
@@ -20,13 +45,9 @@
 	cursor: pointer;
 }
 
-#header tbody tr {
-	height: 200px;
-}
-
-#header tbody {
-	border: none;
-	background: inherit;
+// Just leave the old header here for now for reference instead of removing it
+#header {
+	display: none;
 }
 
 #headerOrgInfo {
@@ -148,3 +169,9 @@ body {
 		box-shadow: 6px 6px 26px -5px rgba(194,194,194,1);
 	}
 }
+
+
+/******** NAVIGATION *******/
+//.sidebarBox .heading {
+//	display: none;
+//}

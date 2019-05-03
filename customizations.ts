@@ -1,9 +1,9 @@
-jQuery(() => {
-  removeFooterLinks();
-  addHomeLink();
-  highlightedAnimalNames();
-});
+// Author: Mark Philipp - mphilipp17{at}gmail.com
+// These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform
 
+/**
+ * Removes all but the few wanted footer links
+ */
 const removeFooterLinks = () => {
   const linksToKeep = ['FAQs', 'About Us', 'Contact Us', 'Donation Info'];
 
@@ -26,18 +26,42 @@ const removeFooterLinks = () => {
     })
 };
 
-const addHomeLink = () => {
+/**
+ *
+ */
+const replaceHead = () => {
+
+  $('a[name="top"]')
+    .after(`<div class="header">
+                  <div class="siteLogo"><a href="/"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png" alt="logo" /></a></div>
+                  <div class="siteHeader"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nk4gnjoklfw.png" alt="temp-header" /></div>
+              </div>`);
+
   $('#logoContainer')
     .on('click', () => window.location.pathname = '/');
 };
 
+/**
+ * Create headers for the highlighted animals with their names
+ */
 const highlightedAnimalNames = () => {
+  // Get the images
   $('.highlighted img.animalimg')
     .each((_, element) => {
+
+      // The alt text is the name of the animal which is the best we have
       const name = $(element).attr('alt');
 
+      // Add the header with the name
       $(element).closest('.highlighted')
         .find('.highlightedInfo')
         .prepend(`<h2 class="highlightedPetName">${name}</h2>`);
     });
 };
+
+// Run all customizations on load
+jQuery(() => {
+  removeFooterLinks();
+  replaceHead();
+  highlightedAnimalNames();
+});

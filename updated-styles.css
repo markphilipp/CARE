@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
 /***** HEADER ******/
+body,
+td {
+  font-family: 'Merriweather Sans', sans-serif;
+}
 .sidebarBox,
 .sidebarBox .heading {
   border: none;
@@ -80,12 +85,11 @@ body {
 /***** SECTION HEADER *****/
 .contentSectionHeader {
   padding-bottom: 10px;
-  font-size: 32px;
+  font-size: 34px;
   font-family: "Helvetica", serif;
   letter-spacing: 3px;
   color: #7caf48;
   text-align: center;
-  font-style: italic;
   font-weight: bold;
   border-bottom: 2px solid #efffe0;
   cursor: pointer;
@@ -119,6 +123,9 @@ body {
 }
 .highlightedInfo {
   width: auto;
+}
+.highlightedInfo .highlightedPetName {
+  letter-spacing: 1px;
 }
 .animalimg:hover {
   -moz-box-shadow: 5px 5px 0 #bfbdbd;

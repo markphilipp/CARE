@@ -69,9 +69,21 @@ const highlightedAnimalNames = () => {
     });
 };
 
+const makeNavigationHorizontal = () => {
+  // Copy menu to new position
+  const header = $('.header');
+  header.after($('#sideBarMenu'));
+
+  // Update new menu to differentiate
+  const newMenu = header.next();
+  newMenu.addClass('newMenu');
+  newMenu.removeAttr('id');
+};
+
 // Run all customizations on load
 jQuery(() => {
   replaceHead();
+  makeNavigationHorizontal();
   fixHighlightedAnimalHeader();
   highlightedAnimalNames();
   removeFooterLinks();

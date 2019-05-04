@@ -54,9 +54,19 @@ var highlightedAnimalNames = function () {
             .prepend("<h2 class=\"highlightedPetName\"><a href=\"" + link + "\">" + name + "</a></h2>");
     });
 };
+var makeNavigationHorizontal = function () {
+    // Copy menu to new position
+    var header = $('.header');
+    header.after($('#sideBarMenu'));
+    // Update new menu to differentiate
+    var newMenu = header.next();
+    newMenu.addClass('newMenu');
+    newMenu.removeAttr('id');
+};
 // Run all customizations on load
 jQuery(function () {
     replaceHead();
+    makeNavigationHorizontal();
     fixHighlightedAnimalHeader();
     highlightedAnimalNames();
     removeFooterLinks();

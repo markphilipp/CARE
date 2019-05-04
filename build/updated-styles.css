@@ -73,7 +73,15 @@ td {
   border-bottom: 2px solid #efffe0;
   cursor: pointer;
 }
-/******** NAVIGATION *******/
+#sideBarMenu {
+  display: none;
+}
+.newMenu {
+  display: flex;
+}
+.newMenu .heading {
+  display: none;
+}
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {
   font-size: initial !important;

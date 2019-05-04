@@ -22,7 +22,7 @@ var removeFooterLinks = function () {
     });
 };
 /**
- *
+ * Replaces the header with a normalized, updated one
  */
 var replaceHead = function () {
     $('a[name="top"]')
@@ -30,7 +30,11 @@ var replaceHead = function () {
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
 };
+/**
+ * Make the header a link because it isn't for some dumb reason
+ */
 var fixHighlightedAnimalHeader = function () {
+    // noinspection HtmlUnknownTarget
     $('div.contentSectionHeader')
         .html('<a href="/animals">Animals</a>');
 };

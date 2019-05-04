@@ -1,0 +1,32 @@
+/*****    FOOTER FIX    *****/
+#bodyContainer {
+  border: none;
+}
+
+#footerContent, #footerContent a {
+  background-color: @lightGrey;
+}
+
+#footerMenu {
+  min-height: initial;
+  display: flex;
+  justify-content: center;
+
+  .menuBottom {
+    margin: 0 15px;
+  }
+}
+
+#footer {
+  background: #333;
+}
+
+#subFooter, #footerOrgEmail > a {
+  color: @bodyFontColor;
+}
+
+#footerOrgEmail > a {
+  &:active, &:visited, &:link {
+    color: @bodyFontColor
+  }
+}

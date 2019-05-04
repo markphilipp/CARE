@@ -1,0 +1,57 @@
+/***** SITE HEADER ******/
+.sidebarBox, .sidebarBox .heading {
+  border: none;
+}
+
+.sidebarBox .heading {
+  text-align: center;
+  background-color: initial;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 15px 15px;
+
+  div {
+    display: flex;
+  }
+
+  .siteLogo {
+    width: 25%;
+    margin-right: 10px;
+  }
+
+  .siteHeader {
+    width: 75%;
+  }
+
+  img {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+.logo {
+  background-image: url('https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png');
+  width: 25%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+// Just leave the old header here for now for reference instead of removing it
+#header {
+  display: none;
+}
+
+#headerOrgInfo {
+  color: #0066CC;
+  text-align: center;
+}
+
+#headerMenu {
+  display: none;
+}

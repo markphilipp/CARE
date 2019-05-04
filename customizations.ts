@@ -27,7 +27,7 @@ const removeFooterLinks = () => {
 };
 
 /**
- *
+ * Replaces the header with a normalized, updated one
  */
 const replaceHead = () => {
 
@@ -41,7 +41,11 @@ const replaceHead = () => {
     .on('click', () => window.location.pathname = '/');
 };
 
+/**
+ * Make the header a link because it isn't for some dumb reason
+ */
 const fixHighlightedAnimalHeader = () => {
+  // noinspection HtmlUnknownTarget
   $('div.contentSectionHeader')
     .html('<a href="/animals">Animals</a>');
 };

@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
-/***** HEADER ******/
+/*****	  BODY 	*******/
+body {
+  background-color: #eae8e8;
+}
 body,
 td {
   font-family: 'Merriweather Sans', sans-serif;
 }
+/***** SITE HEADER ******/
 .sidebarBox,
 .sidebarBox .heading {
   border: none;
@@ -50,37 +54,12 @@ td {
 #headerMenu {
   display: none;
 }
-/*****	  BODY 	*******/
-body {
-  background-color: #eae8e8;
+/***** MISSION STATEMENT ******/
+.missionStatement {
+  font-size: 16px;
 }
-/*****    FOOTER FIX    *****/
-#bodyContainer {
-  border: none;
-}
-#footerContent,
-#footerContent a {
-  background-color: #eae8e8;
-}
-#footerMenu {
-  min-height: initial;
-  display: flex;
-  justify-content: center;
-}
-#footerMenu .menuBottom {
-  margin: 0 15px;
-}
-#footer {
-  background: #333;
-}
-#subFooter,
-#footerOrgEmail > a {
-  color: black;
-}
-#footerOrgEmail > a:active,
-#footerOrgEmail > a:visited,
-#footerOrgEmail > a:link {
-  color: black;
+.registrationInfo {
+  font-style: italic;
 }
 /***** SECTION HEADER *****/
 .contentSectionHeader {
@@ -94,13 +73,7 @@ body {
   border-bottom: 2px solid #efffe0;
   cursor: pointer;
 }
-/***** MISSION STATEMENT ******/
-.missionStatement {
-  font-size: 16px;
-}
-.registrationInfo {
-  font-style: italic;
-}
+/******** NAVIGATION *******/
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {
   font-size: initial !important;
@@ -144,5 +117,32 @@ body {
   -moz-box-shadow: 6px 6px 26px -5px #c2c2c2;
   box-shadow: 6px 6px 26px -5px #c2c2c2;
 }
-/******** NAVIGATION *******/
+/*****    FOOTER FIX    *****/
+#bodyContainer {
+  border: none;
+}
+#footerContent,
+#footerContent a {
+  background-color: #eae8e8;
+}
+#footerMenu {
+  min-height: initial;
+  display: flex;
+  justify-content: center;
+}
+#footerMenu .menuBottom {
+  margin: 0 15px;
+}
+#footer {
+  background: #333;
+}
+#subFooter,
+#footerOrgEmail > a {
+  color: black;
+}
+#footerOrgEmail > a:active,
+#footerOrgEmail > a:visited,
+#footerOrgEmail > a:link {
+  color: black;
+}
 /*# sourceMappingURL=updated-styles.css.map */

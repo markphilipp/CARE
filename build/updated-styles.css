@@ -73,14 +73,23 @@ td {
   border-bottom: 2px solid #efffe0;
   cursor: pointer;
 }
-#sideBarMenu {
-  display: none;
-}
 .newMenu {
   display: flex;
 }
 .newMenu .heading {
   display: none;
+}
+.newMenu .menuL2 {
+  display: none;
+}
+.newMenu .menuL1 ul {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.newMenu .menuL1:hover ul {
+  display: block;
 }
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {

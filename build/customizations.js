@@ -9,7 +9,7 @@ var removeFooterLinks = function () {
         .each(function (_, link) {
         var parent = $(link).parent();
         // Remove links we don't want to keep
-        if (linksToKeep.indexOf(link.innerText) === -1) {
+        if (linksToKeep.indexOf($(link).text()) === -1) {
             parent.remove();
             return;
         }
@@ -62,6 +62,24 @@ var makeNavigationHorizontal = function () {
     var newMenu = header.next();
     newMenu.addClass('newMenu');
     newMenu.removeAttr('id');
+    newMenu.find('.menuL1')
+        .each(function (_, el) {
+        var l1Menu = $(el);
+        var subMenu = null;
+        var nextMenuItem = l1Menu.next();
+        while (nextMenuItem.length && !nextMenuItem.hasClass('menuL1')) {
+            if (!subMenu)
+                l1Menu.append('<ul></ul>');
+            subMenu = l1Menu.find('ul');
+            subMenu.append("<li>" + nextMenuItem.html() + "</li>");
+            nextMenuItem = nextMenuItem.next();
+        }
+    });
+    // TODO: Hack for now to remove board links
+    // noinspection JSJQueryEfficiency
+    $('.newMenu div.menuL1:last').remove();
+    // noinspection JSJQueryEfficiency
+    $('.newMenu div.menuL1:last').remove();
 };
 // Run all customizations on load
 jQuery(function () {

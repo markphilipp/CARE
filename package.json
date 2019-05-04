@@ -1,6 +1,6 @@
 {
   "name": "care",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/markphilipp/CARE.git"
   },
-  "author": "",
+  "author": "Mark Philipp",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/markphilipp/CARE/issues"
@@ -20,5 +20,6 @@
     "@types/jquery": "^3.3.29",
     "less": "^3.9.0",
     "typescript": "^3.4.3"
-  }
+  },
+  "dependencies": {}
 }

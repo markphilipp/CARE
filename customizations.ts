@@ -41,6 +41,11 @@ const replaceHead = () => {
     .on('click', () => window.location.pathname = '/');
 };
 
+const fixHighlightedAnimalHeader = () => {
+  $('div.contentSectionHeader')
+    .html('<a href="/animals">Animals</a>');
+};
+
 /**
  * Create headers for the highlighted animals with their names
  */
@@ -51,17 +56,19 @@ const highlightedAnimalNames = () => {
 
       // The alt text is the name of the animal which is the best we have
       const name = $(element).attr('alt');
+      const link = $(element).parent().attr('href');
 
       // Add the header with the name
       $(element).closest('.highlighted')
         .find('.highlightedInfo')
-        .prepend(`<h2 class="highlightedPetName">${name}</h2>`);
+        .prepend(`<h2 class="highlightedPetName"><a href="${link}">${name}</a></h2>`);
     });
 };
 
 // Run all customizations on load
 jQuery(() => {
-  removeFooterLinks();
   replaceHead();
+  fixHighlightedAnimalHeader();
   highlightedAnimalNames();
+  removeFooterLinks();
 });

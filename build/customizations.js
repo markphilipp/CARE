@@ -30,6 +30,10 @@ var replaceHead = function () {
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
 };
+var fixHighlightedAnimalHeader = function () {
+    $('div.contentSectionHeader')
+        .html('<a href="/animals">Animals</a>');
+};
 /**
  * Create headers for the highlighted animals with their names
  */
@@ -39,16 +43,18 @@ var highlightedAnimalNames = function () {
         .each(function (_, element) {
         // The alt text is the name of the animal which is the best we have
         var name = $(element).attr('alt');
+        var link = $(element).parent().attr('href');
         // Add the header with the name
         $(element).closest('.highlighted')
             .find('.highlightedInfo')
-            .prepend("<h2 class=\"highlightedPetName\">" + name + "</h2>");
+            .prepend("<h2 class=\"highlightedPetName\"><a href=\"" + link + "\">" + name + "</a></h2>");
     });
 };
 // Run all customizations on load
 jQuery(function () {
-    removeFooterLinks();
     replaceHead();
+    fixHighlightedAnimalHeader();
     highlightedAnimalNames();
+    removeFooterLinks();
 });
 //# sourceMappingURL=customizations.js.map

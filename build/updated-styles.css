@@ -70,7 +70,7 @@ td {
 }
 /***** SECTION HEADER *****/
 .contentSectionHeader {
-  padding-bottom: 10px;
+  padding: 10px 0;
   font-size: 34px;
   font-family: "Helvetica", serif;
   letter-spacing: 3px;
@@ -180,11 +180,18 @@ td {
   box-shadow: 5px 5px 0 #bfbdbd;
   border-radius: 5px;
 }
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 .sponsors div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-bottom: 25px;
 }
 .sponsors div a,
 .sponsors div img {
@@ -199,7 +206,7 @@ td {
   margin-bottom: 25px;
 }
 .support-us img {
-  width: 95%;
+  width: 75%;
   -webkit-box-shadow: 6px 6px 26px -5px #c2c2c2;
   -moz-box-shadow: 6px 6px 26px -5px #c2c2c2;
   box-shadow: 6px 6px 26px -5px #c2c2c2;

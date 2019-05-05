@@ -182,7 +182,8 @@ td {
 }
 .sponsors div {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 /******* SUPPORT US ********/
 .support-us {

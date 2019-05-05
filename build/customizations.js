@@ -46,7 +46,7 @@ var replaceHead = function () {
  */
 var fixHighlightedAnimalHeader = function () {
     // noinspection HtmlUnknownTarget
-    $('div.contentSectionHeader')
+    $('div.contentSectionHeader a[href="/animals"]').parent()
         .html('<a href="/animals">Animals</a>');
 };
 /**

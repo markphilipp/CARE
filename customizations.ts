@@ -57,7 +57,7 @@ const replaceHead = () => {
  */
 const fixHighlightedAnimalHeader = () => {
   // noinspection HtmlUnknownTarget
-  $('div.contentSectionHeader')
+  $('div.contentSectionHeader a[href="/animals"]').parent()
     .html('<a href="/animals">Animals</a>');
 };
 

@@ -188,12 +188,15 @@ td {
 }
 .sponsors div a,
 .sponsors div img {
-  width: 100%;
+  width: 95%;
 }
 /******* SUPPORT US ********/
 .support-us {
   display: flex;
   flex-direction: column;
+}
+.support-us > div {
+  margin-bottom: 25px;
 }
 .support-us img {
   width: 95%;

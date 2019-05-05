@@ -57,6 +57,10 @@ td {
 #headerMenu {
   display: none;
 }
+.editableFrontPageBottom {
+  display: flex;
+  flex-direction: column;
+}
 /***** MISSION STATEMENT ******/
 .missionStatement {
   font-size: 16px;
@@ -175,6 +179,11 @@ td {
   -webkit-box-shadow: 5px 5px 0 #bfbdbd;
   box-shadow: 5px 5px 0 #bfbdbd;
   border-radius: 5px;
+}
+.sponsors div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /******* SUPPORT US ********/
 .support-us {

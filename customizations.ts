@@ -12,7 +12,7 @@ const removeFooterLinks = () => {
       const parent = $(link).parent();
 
       // Remove links we don't want to keep
-      if (linksToKeep.indexOf(link.innerText) === -1) {
+      if (linksToKeep.indexOf($(link).text()) === -1) {
         parent.remove();
         return;
       }
@@ -69,9 +69,39 @@ const highlightedAnimalNames = () => {
     });
 };
 
+const makeNavigationHorizontal = () => {
+  // Copy menu to new position
+  const header = $('.header');
+  header.after($('#sideBarMenu'));
+
+  // Update new menu to differentiate
+  const newMenu = header.next();
+  newMenu.attr('class', 'newMenu');
+  newMenu.removeAttr('id');
+
+  newMenu.find('.menuL1')
+    .each((_, el) => {
+      const l1Menu = $(el);
+
+      let subMenu : JQuery = null;
+      let nextMenuItem = l1Menu.next();
+      while(nextMenuItem.length && !nextMenuItem.hasClass('menuL1')) {
+
+        if (!subMenu)
+          l1Menu.append('<ul></ul>');
+
+        subMenu = l1Menu.find('ul');
+        subMenu.append(`<li>${nextMenuItem.html()}</li>`);
+
+        nextMenuItem = nextMenuItem.next();
+      }
+     });
+};
+
 // Run all customizations on load
 jQuery(() => {
   replaceHead();
+  makeNavigationHorizontal();
   fixHighlightedAnimalHeader();
   highlightedAnimalNames();
   removeFooterLinks();

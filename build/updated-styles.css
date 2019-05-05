@@ -73,7 +73,74 @@ td {
   border-bottom: 2px solid #efffe0;
   cursor: pointer;
 }
-/******** NAVIGATION *******/
+.newMenu {
+  display: flex;
+  justify-content: space-evenly;
+  background: linear-gradient(0deg, #a5dd83 0%, #72bf44 100%);
+  font-size: 18px;
+}
+.newMenu a,
+.newMenu a:visited {
+  color: #f5f1f1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.newMenu a:hover,
+.newMenu a:visited:hover {
+  text-decoration: underline;
+}
+.newMenu .heading {
+  display: none;
+}
+.newMenu .menuL2 {
+  display: none;
+}
+.newMenu .menuL1 {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-grow: 1;
+}
+.newMenu .menuL1 ul {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding-inline-start: 0;
+  background-color: #FFF;
+  min-width: 20%;
+  margin-top: 38px;
+}
+.newMenu .menuL1 ul li {
+  padding: 10px;
+}
+.newMenu .menuL1 ul li:hover {
+  cursor: pointer;
+  background-color: #f5f1f1;
+}
+.newMenu .menuL1 ul li a,
+.newMenu .menuL1 ul li a:visited {
+  color: #313133;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: none;
+}
+.newMenu .menuL1 ul li a:hover,
+.newMenu .menuL1 ul li a:visited:hover {
+  text-decoration: underline;
+}
+.newMenu .menuL1:hover {
+  cursor: pointer;
+}
+.newMenu .menuL1:hover ul {
+  display: block;
+}
+.newMenu .menuL1:hover a,
+.newMenu .menuL1:hover a:visited {
+  text-decoration: underline;
+}
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {
   font-size: initial !important;

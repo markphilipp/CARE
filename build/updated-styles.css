@@ -204,9 +204,19 @@ td {
 }
 .support-us > div {
   margin-bottom: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-.support-us img {
-  width: 75%;
+.support-us div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.support-us .support-logo a {
+  text-align: center;
+}
+.support-us .support-logo img {
+  width: 100%;
   -webkit-box-shadow: 6px 6px 26px -5px #c2c2c2;
   -moz-box-shadow: 6px 6px 26px -5px #c2c2c2;
   box-shadow: 6px 6px 26px -5px #c2c2c2;

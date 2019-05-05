@@ -80,6 +80,9 @@ const highlightedAnimalNames = () => {
     });
 };
 
+/**
+ * Flip the vertical nav into a normal horizontal tab bar
+ */
 const makeNavigationHorizontal = () => {
   // Copy menu to new position
   const header = $('.header');

@@ -65,6 +65,9 @@ var highlightedAnimalNames = function () {
             .prepend("<h2 class=\"highlightedPetName\"><a href=\"" + link + "\">" + name + "</a></h2>");
     });
 };
+/**
+ * Flip the vertical nav into a normal horizontal tab bar
+ */
 var makeNavigationHorizontal = function () {
     // Copy menu to new position
     var header = $('.header');

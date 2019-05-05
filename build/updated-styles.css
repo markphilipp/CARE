@@ -3,6 +3,9 @@
 body {
   background-color: #eae8e8;
 }
+#bodyContainer {
+  border: none;
+}
 body,
 td {
   font-family: 'Merriweather Sans', sans-serif;
@@ -185,9 +188,6 @@ td {
   box-shadow: 6px 6px 26px -5px #c2c2c2;
 }
 /*****    FOOTER FIX    *****/
-#bodyContainer {
-  border: none;
-}
 #footerContent,
 #footerContent a {
   background-color: #eae8e8;

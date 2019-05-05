@@ -5,25 +5,36 @@
  * Removes all but the few wanted footer links
  */
 const removeFooterLinks = () => {
-  const linksToKeep = ['FAQs', 'About Us', 'Contact Us', 'Donation Info'];
+  // Remove old footer because it is driven by the same data as the menu navigation which makes it so cluttered
+  $('#footer').remove();
 
-  $('.menuBottomFirst > a, .menuBottom > a')
-    .each((_, link) => {
-      const parent = $(link).parent();
+  // Add new footer
+  $('<div class="site-footer"></div>').insertAfter('#content');
 
-      // Remove links we don't want to keep
-      if (linksToKeep.indexOf($(link).text()) === -1) {
-        parent.remove();
-        return;
-      }
+  // Add our four static links
+  const footerLinks = [
+    {
+      text: 'About',
+      link: 'https://www.caretoadopt.org/info/'
+    },
+    {
+      text: 'Contact Us',
+      link: 'https://www.caretoadopt.org/info/contact'
+    },
+    {
+      text: 'Donate',
+      link: 'https://www.caretoadopt.org/info/donate'
+    },
+    {
+    text: 'FAQS',
+    link: 'https://www.caretoadopt.org/info/display?PageID=3218'
+    }
+  ];
 
-      // Remove pipes from links
-      if (parent.get(0).innerText.substring(0, 4) === " |  ") {
-        parent.contents()
-          .filter((_, e) => e.nodeType === Node.TEXT_NODE)
-          .replaceWith('');
-      }
-    })
+  footerLinks.forEach(link => {
+    $('.site-footer')
+      .append(`<div class="menuBottom"><a href="${link.link}">${link.text}</a></div>`);
+  });
 };
 
 /**

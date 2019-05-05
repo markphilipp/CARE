@@ -188,20 +188,11 @@ td {
   box-shadow: 6px 6px 26px -5px #c2c2c2;
 }
 /*****    FOOTER FIX    *****/
-#footerContent,
-#footerContent a {
+.site-footer {
   background-color: #eae8e8;
-}
-#footerMenu {
-  min-height: initial;
   display: flex;
-  justify-content: center;
-}
-#footerMenu .menuBottom {
-  margin: 0 15px;
-}
-#footer {
-  background: #333;
+  justify-content: space-evenly;
+  padding: 10px 0;
 }
 #subFooter,
 #footerOrgEmail > a {

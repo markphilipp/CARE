@@ -76,7 +76,7 @@ const makeNavigationHorizontal = () => {
 
   // Update new menu to differentiate
   const newMenu = header.next();
-  newMenu.addClass('newMenu');
+  newMenu.attr('class', 'newMenu');
   newMenu.removeAttr('id');
 
   newMenu.find('.menuL1')
@@ -96,12 +96,6 @@ const makeNavigationHorizontal = () => {
         nextMenuItem = nextMenuItem.next();
       }
      });
-
-  // TODO: Hack for now to remove board links
-  // noinspection JSJQueryEfficiency
-  $('.newMenu div.menuL1:last').remove();
-  // noinspection JSJQueryEfficiency
-  $('.newMenu div.menuL1:last').remove();
 };
 
 // Run all customizations on load

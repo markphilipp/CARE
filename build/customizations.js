@@ -60,7 +60,7 @@ var makeNavigationHorizontal = function () {
     header.after($('#sideBarMenu'));
     // Update new menu to differentiate
     var newMenu = header.next();
-    newMenu.addClass('newMenu');
+    newMenu.attr('class', 'newMenu');
     newMenu.removeAttr('id');
     newMenu.find('.menuL1')
         .each(function (_, el) {
@@ -75,11 +75,6 @@ var makeNavigationHorizontal = function () {
             nextMenuItem = nextMenuItem.next();
         }
     });
-    // TODO: Hack for now to remove board links
-    // noinspection JSJQueryEfficiency
-    $('.newMenu div.menuL1:last').remove();
-    // noinspection JSJQueryEfficiency
-    $('.newMenu div.menuL1:last').remove();
 };
 // Run all customizations on load
 jQuery(function () {

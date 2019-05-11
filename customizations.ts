@@ -1,5 +1,5 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
-// These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform
+// These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 
 /**
  * Removes all but the few wanted footer links
@@ -38,11 +38,22 @@ const removeFooterLinks = () => {
 };
 
 /**
- * Replaces the header with a normalized, updated one
+ * Replaces the header with a normalized, updated one and updated user nav
  */
-const replaceHead = () => {
+const replaceHeader = () => {
 
-  $('a[name="top"]')
+  const top = $('a[name="top"]');
+
+  updateLogoAndPageTitle(top);
+  addUserMenu(top);
+};
+
+/**
+ * Update main logo and title
+ * @param top {JQuery} - the top element to add the menu after
+ */
+const updateLogoAndPageTitle = (top : JQuery) => {
+  top
     .after(`<div class="header">
                   <div class="siteLogo"><a href="/"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png" alt="logo" /></a></div>
                   <div class="siteHeader"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nk4gnjoklfw.png" alt="temp-header" /></div>
@@ -50,6 +61,22 @@ const replaceHead = () => {
 
   $('#logoContainer')
     .on('click', () => window.location.pathname = '/');
+};
+
+/**
+ * Add login/logout/register menu in upper right
+ * @param top {JQuery} - the top element to add the menu after
+ */
+const addUserMenu = (top : JQuery) => {
+  const userLoggedIn = getCookie('LoggedIn') === "Yes" &&
+    getCookie('UserID') !== null;
+
+  const contents = userLoggedIn
+    ? `<a href="/user/logout">Logout</a>`
+    : `<a href="/user/login">Login</a><a href="/user/register">Register</a>`;
+
+  top.after(
+    `<div class="website-user-menu">${contents}</div>`);
 };
 
 /**
@@ -112,9 +139,23 @@ const makeNavigationHorizontal = () => {
      });
 };
 
+/**
+ * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
+ * @param name
+ */
+const getCookie = (name: string): string => {
+  const nameLenPlus = (name.length + 1);
+  return document.cookie
+    .split(';')
+    .map(c => c.trim())
+    .filter(cookie => cookie.substring(0, nameLenPlus) === `${name}=`)
+    .map(cookie => decodeURIComponent(cookie.substring(nameLenPlus)))
+    [0] || null;
+};
+
 // Run all customizations on load
 jQuery(() => {
-  replaceHead();
+  replaceHeader();
   makeNavigationHorizontal();
   fixHighlightedAnimalHeader();
   highlightedAnimalNames();

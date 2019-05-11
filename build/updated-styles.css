@@ -23,7 +23,7 @@ td {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  padding: 15px 15px;
+  padding: 0 15px;
 }
 .header div {
   display: flex;
@@ -56,6 +56,14 @@ td {
 }
 #headerMenu {
   display: none;
+}
+.website-user-menu {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+.website-user-menu a {
+  padding-right: 15px;
 }
 .editableFrontPageBottom {
   display: flex;
@@ -147,6 +155,10 @@ td {
 .newMenu .menuL1:hover a,
 .newMenu .menuL1:hover a:visited {
   text-decoration: underline;
+}
+/* Hide old navigation */
+#left {
+  display: none;
 }
 /***** HIGHLIGHTED ANIMALS *****/
 .highlighted {

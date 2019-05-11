@@ -1,5 +1,5 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
-// These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform
+// These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 /**
  * Removes all but the few wanted footer links
  */
@@ -33,13 +33,34 @@ var removeFooterLinks = function () {
     });
 };
 /**
- * Replaces the header with a normalized, updated one
+ * Replaces the header with a normalized, updated one and updated user nav
  */
-var replaceHead = function () {
-    $('a[name="top"]')
+var replaceHeader = function () {
+    var top = $('a[name="top"]');
+    updateLogoAndPageTitle(top);
+    addUserMenu(top);
+};
+/**
+ * Update main logo and title
+ * @param top {JQuery} - the top element to add the menu after
+ */
+var updateLogoAndPageTitle = function (top) {
+    top
         .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nk4gnjoklfw.png\" alt=\"temp-header\" /></div>\n              </div>");
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
+};
+/**
+ * Add login/logout/register menu in upper right
+ * @param top {JQuery} - the top element to add the menu after
+ */
+var addUserMenu = function (top) {
+    var userLoggedIn = getCookie('LoggedIn') === "Yes" &&
+        getCookie('UserID') !== null;
+    var contents = userLoggedIn
+        ? "<a href=\"/user/logout\">Logout</a>"
+        : "<a href=\"/user/login\">Login</a><a href=\"/user/register\">Register</a>";
+    top.after("<div class=\"website-user-menu\">" + contents + "</div>");
 };
 /**
  * Make the header a link because it isn't for some dumb reason
@@ -90,9 +111,21 @@ var makeNavigationHorizontal = function () {
         }
     });
 };
+/**
+ * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
+ * @param name
+ */
+var getCookie = function (name) {
+    var nameLenPlus = (name.length + 1);
+    return document.cookie
+        .split(';')
+        .map(function (c) { return c.trim(); })
+        .filter(function (cookie) { return cookie.substring(0, nameLenPlus) === name + "="; })
+        .map(function (cookie) { return decodeURIComponent(cookie.substring(nameLenPlus)); })[0] || null;
+};
 // Run all customizations on load
 jQuery(function () {
-    replaceHead();
+    replaceHeader();
     makeNavigationHorizontal();
     fixHighlightedAnimalHeader();
     highlightedAnimalNames();

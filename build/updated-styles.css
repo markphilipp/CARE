@@ -24,6 +24,7 @@ td {
   flex-direction: row;
   flex-grow: 1;
   padding: 0 15px;
+  justify-content: center;
 }
 .header div {
   display: flex;
@@ -34,6 +35,35 @@ td {
 }
 .header .siteHeader {
   width: 75%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header .siteHeader h1,
+.header .siteHeader h2 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.header .siteHeader h1 {
+  font-size: 53px;
+  display: flex;
+  margin-bottom: 10px;
+}
+.header .siteHeader h2 {
+  letter-spacing: 3px;
+  font-size: 28px;
+  margin-top: 10px;
+}
+.header .siteHeader .divider {
+  border-bottom: solid 3px;
+  width: 100%;
+}
+.header .siteHeader span.primaryLogoColor {
+  color: #00ACCB;
+}
+.header .siteHeader span.secondaryLogoColor {
+  color: #72BF44;
 }
 .header img {
   width: 100%;

@@ -1,3 +1,5 @@
+@import "constants";
+
 /***** SITE HEADER ******/
 .sidebarBox, .sidebarBox .heading {
   border: none;
@@ -13,6 +15,7 @@
   flex-direction: row;
   flex-grow: 1;
   padding: 0 15px;
+  justify-content: center;
 
   div {
     display: flex;
@@ -25,6 +28,40 @@
 
   .siteHeader {
     width: 75%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1, h2 {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 53px;
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      letter-spacing: 3px;
+      font-size: 28px;
+      margin-top: 10px;
+    }
+
+    .divider {
+      border-bottom: solid 3px;
+      width: 100%;
+    }
+
+    span.primaryLogoColor {
+      color: @logo-blue;
+    }
+
+    span.secondaryLogoColor {
+      color: @logo-green;
+    }
   }
 
   img {

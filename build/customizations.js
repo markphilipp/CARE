@@ -46,7 +46,7 @@ var replaceHeader = function () {
  */
 var updateLogoAndPageTitle = function (top) {
     top
-        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nk4gnjoklfw.png\" alt=\"temp-header\" /></div>\n              </div>");
+        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\">\n                    <h1>Cullen's Archangel RescuE</h1>\n                      <div class=\"divider\"></div>\n                    <h2>\n                      <span class=\"primaryLogoColor\">iRescue</span>&#183;\n                      <span class=\"secondaryLogoColor\">iFoster</span>&#183;\n                      <span class=\"primaryLogoColor\">iDonate&#183;</span>\n                      <span class=\"secondaryLogoColor\">iAdopt&#183;</span>\n                      <span class=\"primaryLogoColor\">iCARE</span>\n                    </h2>\n                  </div>\n              </div>");
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
 };

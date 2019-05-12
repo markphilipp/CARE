@@ -56,7 +56,17 @@ const updateLogoAndPageTitle = (top : JQuery) => {
   top
     .after(`<div class="header">
                   <div class="siteLogo"><a href="/"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png" alt="logo" /></a></div>
-                  <div class="siteHeader"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nk4gnjoklfw.png" alt="temp-header" /></div>
+                  <div class="siteHeader">
+                    <h1>Cullen's Archangel RescuE</h1>
+                      <div class="divider"></div>
+                    <h2>
+                      <span class="primaryLogoColor">iRescue</span>&#183;
+                      <span class="secondaryLogoColor">iFoster</span>&#183;
+                      <span class="primaryLogoColor">iDonate&#183;</span>
+                      <span class="secondaryLogoColor">iAdopt&#183;</span>
+                      <span class="primaryLogoColor">iCARE</span>
+                    </h2>
+                  </div>
               </div>`);
 
   $('#logoContainer')

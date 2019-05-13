@@ -279,4 +279,16 @@ td {
 #footerOrgEmail > a:link {
   color: black;
 }
+.article {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.article .article-summary {
+  margin-left: 15px;
+}
+.article h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
 /*# sourceMappingURL=updated-styles.css.map */

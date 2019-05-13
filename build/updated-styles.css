@@ -99,6 +99,14 @@ td {
   display: flex;
   flex-direction: column;
 }
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+.column-flex {
+  display: flex;
+  flex-direction: column;
+}
 /***** MISSION STATEMENT ******/
 .missionStatement {
   font-size: 16px;
@@ -280,8 +288,6 @@ td {
   color: black;
 }
 .article {
-  display: flex;
-  align-items: center;
   margin-top: 15px;
 }
 .article .article-summary {

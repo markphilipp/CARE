@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "tsc & lessc",
-    "watch": "less-watch-compiler"
+    "watch": "tsc --watch & less-watch-compiler"
   },
   "repository": {
     "type": "git",

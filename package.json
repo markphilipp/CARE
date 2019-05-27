@@ -2,9 +2,9 @@
   "name": "care",
   "version": "1.1.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc & lessc",
+    "watch": "less-watch-compiler"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/jquery": "^1.10.31",
     "less": "^3.9.0",
+    "less-watch-compiler": "^1.13.0",
     "typescript": "^3.4.3"
   },
   "dependencies": {}

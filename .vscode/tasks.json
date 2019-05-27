@@ -11,6 +11,18 @@
             "problemMatcher": [
                 "$lessc"
             ]
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "npm run build",
+            "group": "build",
+            "problemMatcher": [
+                "$lessc",
+                "$tsc",
+                "$tsc-watch",
+                "$lessCompile"
+            ]
         }
     ]
 }

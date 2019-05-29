@@ -9,7 +9,10 @@
             "command": "npm run watch",
             "group": "build",
             "problemMatcher": [
-                "$lessc"
+                "$lessc",
+                "$tsc",
+                "$tsc-watch",
+                "$lessCompile"
             ]
         },
         {

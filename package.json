@@ -4,11 +4,13 @@
   "description": "",
   "scripts": {
     "build": "npm run build-ts && npm run build-css",
-    "watch": "npm run watch-ts & npm run watch-css",
+    "watch": "npm run watch-ts & npm run watch-css & npm run watch-server",
     "build-css": "less-watch-compiler --run-once --config \"less-watch-compiler.config.json\"",
     "watch-css": "less-watch-compiler",
     "build-ts": "tsc",
-    "watch-ts": "tsc --watch"
+    "watch-ts": "tsc --watch",
+    "watch-server": "nodemon ./build/index.js",
+    "serve": "node ./build/index.js"
   },
   "repository": {
     "type": "git",

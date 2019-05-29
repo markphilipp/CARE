@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+/*****	 GLOBAL OVERRIDES 	*******/
+.siteWidth {
+  width: 100%;
+  max-width: 1600px;
+}
 /*****	  BODY 	*******/
 body {
   background-color: #eae8e8;

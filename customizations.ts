@@ -134,7 +134,7 @@ const makeNavigationHorizontal = () => {
     .each((_, el) => {
       const l1Menu = $(el);
 
-      let subMenu : JQuery = null;
+      let subMenu : JQuery | null = null;
       let nextMenuItem = l1Menu.next();
       while(nextMenuItem.length && !nextMenuItem.hasClass('menuL1')) {
 
@@ -153,7 +153,7 @@ const makeNavigationHorizontal = () => {
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
  * @param name
  */
-const getCookie = (name: string): string => {
+const getCookie = (name: string): string | null => {
   const nameLenPlus = (name.length + 1);
   return document.cookie
     .split(';')

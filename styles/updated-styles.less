@@ -1,5 +1,12 @@
-@import "constants";
 @import (css) url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+@import "constants";
+
+
+/*****	 GLOBAL OVERRIDES 	*******/  
+.siteWidth{
+	width:100%;
+	max-width:@max-width;
+}
 
 /*****	  BODY 	*******/
 body {
@@ -11,7 +18,7 @@ body {
 }
 
 body, td {
-	font-family: 'Merriweather Sans', sans-serif;
+	font-family: @copy-font
 }
 
 @import "site-header";

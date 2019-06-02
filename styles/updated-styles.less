@@ -1,19 +1,24 @@
-@import (css) url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+@import (css) url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
 @import "constants";
 
 
 /*****	 GLOBAL OVERRIDES 	*******/  
 .siteWidth{
+	box-sizing: border-box;
 	width:100%;
 	max-width:@max-width;
 }
 
 /*****	  BODY 	*******/
 body {
-	background-color: @lightGrey;
+	background-color:lighten(@logo-green, 40%);
+}
+body *{
+	box-sizing: border-box;
 }
 
 #bodyContainer {
+	margin-top:0;
 	border: none;
 }
 

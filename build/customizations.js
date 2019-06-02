@@ -46,7 +46,7 @@ var replaceHeader = function () {
  */
 var updateLogoAndPageTitle = function (top) {
     top
-        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\">\n                    <h1>Cullen's Archangel RescuE</h1>\n                      <div class=\"divider\"></div>\n                    <h2>\n                      <span class=\"primaryLogoColor\">iRescue</span>&#183;\n                      <span class=\"secondaryLogoColor\">iFoster</span>&#183;\n                      <span class=\"primaryLogoColor\">iDonate&#183;</span>\n                      <span class=\"secondaryLogoColor\">iAdopt&#183;</span>\n                      <span class=\"primaryLogoColor\">iCARE</span>\n                    </h2>\n                  </div>\n              </div>");
+        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\">\n                    <h1>Cullen's Archangel RescuE</h1>\n                    <h2>\n                      <span class=\"primaryLogoColor\">iRescue</span>\n                      <span class=\"secondaryLogoColor\">iFoster</span>\n                      <span class=\"primaryLogoColor\">iDonate</span>\n                      <span class=\"secondaryLogoColor\">iAdopt</span>\n                      <span class=\"primaryLogoColor\">iCARE</span>\n                    </h2>\n                  </div>\n              </div>");
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
 };
@@ -112,6 +112,20 @@ var makeNavigationHorizontal = function () {
     });
 };
 /**
+ * Move Horizontal navigation for mobile
+ */
+var makeNavigationMobile = function () {
+    $(window).on("resize", function () {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 720 && !$('.mobile').length) {
+            $('.newMenu').addClass('mobile').prependTo('#bodyContainer');
+        }
+        if (viewportWidth > 720 && $('.mobile').length) {
+            $('.newMenu').removeClass('mobile').insertAfter('.header');
+        }
+    }).resize();
+};
+/**
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
  * @param name
  */
@@ -130,5 +144,6 @@ jQuery(function () {
     fixHighlightedAnimalHeader();
     highlightedAnimalNames();
     removeFooterLinks();
+    makeNavigationMobile();
 });
 //# sourceMappingURL=customizations.js.map

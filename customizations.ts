@@ -58,12 +58,11 @@ const updateLogoAndPageTitle = (top : JQuery) => {
                   <div class="siteLogo"><a href="/"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png" alt="logo" /></a></div>
                   <div class="siteHeader">
                     <h1>Cullen's Archangel RescuE</h1>
-                      <div class="divider"></div>
                     <h2>
-                      <span class="primaryLogoColor">iRescue</span>&#183;
-                      <span class="secondaryLogoColor">iFoster</span>&#183;
-                      <span class="primaryLogoColor">iDonate&#183;</span>
-                      <span class="secondaryLogoColor">iAdopt&#183;</span>
+                      <span class="primaryLogoColor">iRescue</span>
+                      <span class="secondaryLogoColor">iFoster</span>
+                      <span class="primaryLogoColor">iDonate</span>
+                      <span class="secondaryLogoColor">iAdopt</span>
                       <span class="primaryLogoColor">iCARE</span>
                     </h2>
                   </div>
@@ -150,6 +149,23 @@ const makeNavigationHorizontal = () => {
 };
 
 /**
+ * Move Horizontal navigation for mobile
+ */
+const makeNavigationMobile = () => {
+
+  $(window).on("resize", function () {
+    const viewportWidth = $(window).width();
+      if (viewportWidth < 720 && !$('.mobile').length){
+        $('.newMenu').addClass('mobile').prependTo('#bodyContainer');
+      }
+
+      if (viewportWidth > 720 && $('.mobile').length){
+        $('.newMenu').removeClass('mobile').insertAfter('.header');
+      }
+    }).resize();
+};
+
+/**
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
  * @param name
  */
@@ -170,4 +186,5 @@ jQuery(() => {
   fixHighlightedAnimalHeader();
   highlightedAnimalNames();
   removeFooterLinks();
+  makeNavigationMobile();
 });

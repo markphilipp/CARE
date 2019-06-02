@@ -14,45 +14,55 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  padding: 0 15px;
-  justify-content: center;
-
-  div {
-    display: flex;
-  }
+  padding: 12px 16px;
 
   .siteLogo {
-    width: 25%;
-    margin-right: 10px;
+    flex:0 0 150px;
+    margin-right: 30px;
+
+    @media only screen and (max-width: 975px) {
+      flex: 0 0 80px;
+      margin-right:15px;
+    }
+    @media only screen and (max-width: 520px) {
+      flex: 0 0 50px;
+    }
   }
 
   .siteHeader {
-    width: 75%;
+    display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
-    h1, h2 {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-    }
-
     h1 {
-      font-size: 53px;
-      display: flex;
-      margin-bottom: 10px;
+      font-size: 3em;
+      color:@logo-blue;
+      margin:0;
+      border-bottom: 1px solid @logo-green;
+      padding-bottom: 10px;
+
+      @media only screen and (max-width: 975px) {
+        font-size:2em;
+      }
+      @media only screen and (max-width: 725px) {
+        border-bottom:0;
+      }
+      @media only screen and (max-width: 520px) {
+        font-size: 1.5em;
+      }
     }
 
     h2 {
       letter-spacing: 3px;
-      font-size: 28px;
+      font-size: 1.5em;
       margin-top: 10px;
-    }
 
-    .divider {
-      border-bottom: solid 3px;
-      width: 100%;
+      @media only screen and (max-width: 975px) {
+        font-size:1em;
+      }
+      @media only screen and (max-width: 725px) {
+        display:none;
+      }
     }
 
     span.primaryLogoColor {
@@ -94,11 +104,38 @@
 }
 
 .website-user-menu {
+  float: right;
   display: flex;
-  justify-content: flex-end;
-  padding-top: 15px;
+  padding: 15px 15px 0 0;
+
+  @media only screen and (max-width: 725px) {
+    display:none;
+  }
 
   a {
-    padding-right: 15px;
+    display: block;
+    margin-right: 15px;
+    padding: 6px 20px;
+    background: @logo-blue;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background .3s;
+    text-align:center;
+
+    @media only screen and (max-width: 725px) {
+      margin-right: 0;
+      margin-bottom:6px;
+    }
+
+    &:last-child{
+      margin-right: 0;
+      margin-bottom:0;
+    }
+
+    &:hover{
+      background:darken(@logo-blue,20%);
+    }
+
   }
 }

@@ -1,6 +1,14 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
 // These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 
+
+/**
+ * Insert mobile viewport meta tag for responsive
+ */
+const insertViewportMetatag = () => {
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1">');
+};
+
 /**
  * Removes all but the few wanted footer links
  */
@@ -149,20 +157,23 @@ const makeNavigationHorizontal = () => {
 };
 
 /**
- * Move Horizontal navigation for mobile
+ * Mobile navigation
  */
 const makeNavigationMobile = () => {
 
   $(window).on("resize", function () {
     const viewportWidth = $(window).width();
-      if (viewportWidth < 720 && !$('.mobile').length){
-        $('.newMenu').addClass('mobile').prependTo('#bodyContainer');
-      }
+    if (viewportWidth < 720 && !$('.mobileNavToggle').length){
+      $('.header').append('<div class="mobileNavToggle"><span></span><span></span><span></span></div>');
+    }
+    if (viewportWidth > 720 && $('.mobileNavToggle').length){
+      $('.mobileNavToggle').remove();
+    }
+  }).resize();
 
-      if (viewportWidth > 720 && $('.mobile').length){
-        $('.newMenu').removeClass('mobile').insertAfter('.header');
-      }
-    }).resize();
+  $('.mobileNavToggle').on( "click", function() {
+    $('body').toggleClass('mobileNavActive');
+  });
 };
 
 /**
@@ -181,6 +192,7 @@ const getCookie = (name: string): string => {
 
 // Run all customizations on load
 jQuery(() => {
+  insertViewportMetatag();
   replaceHeader();
   makeNavigationHorizontal();
   fixHighlightedAnimalHeader();

@@ -1,6 +1,12 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
 // These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 /**
+ * Insert mobile viewport meta tag for responsive
+ */
+var insertViewportMetatag = function () {
+    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1">');
+};
+/**
  * Removes all but the few wanted footer links
  */
 var removeFooterLinks = function () {
@@ -112,18 +118,21 @@ var makeNavigationHorizontal = function () {
     });
 };
 /**
- * Move Horizontal navigation for mobile
+ * Mobile navigation
  */
 var makeNavigationMobile = function () {
     $(window).on("resize", function () {
         var viewportWidth = $(window).width();
-        if (viewportWidth < 720 && !$('.mobile').length) {
-            $('.newMenu').addClass('mobile').prependTo('#bodyContainer');
+        if (viewportWidth < 720 && !$('.mobileNavToggle').length) {
+            $('.header').append('<div class="mobileNavToggle"><span></span><span></span><span></span></div>');
         }
-        if (viewportWidth > 720 && $('.mobile').length) {
-            $('.newMenu').removeClass('mobile').insertAfter('.header');
+        if (viewportWidth > 720 && $('.mobileNavToggle').length) {
+            $('.mobileNavToggle').remove();
         }
     }).resize();
+    $('.mobileNavToggle').on("click", function () {
+        $('body').toggleClass('mobileNavActive');
+    });
 };
 /**
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
@@ -139,6 +148,7 @@ var getCookie = function (name) {
 };
 // Run all customizations on load
 jQuery(function () {
+    insertViewportMetatag();
     replaceHeader();
     makeNavigationHorizontal();
     fixHighlightedAnimalHeader();

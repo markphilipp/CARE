@@ -13,8 +13,11 @@ body * {
   box-sizing: border-box;
 }
 #bodyContainer {
+<<<<<<< HEAD
   position: relative;
   overflow: hidden;
+=======
+>>>>>>> af99add5c334ebfaa28951e9de7c5a58f6762bb2
   margin-top: 0;
   border: none;
 }
@@ -237,6 +240,7 @@ a:visited,
   text-decoration: none;
   text-transform: uppercase;
   transition: background 0.3s;
+<<<<<<< HEAD
 }
 @media only screen and (max-width: 720px) {
   .newMenu .menuL1 > a,
@@ -244,6 +248,15 @@ a:visited,
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+=======
+}
+@media only screen and (max-width: 720px) {
+  .newMenu .menuL1 > a,
+  .newMenu .menuL1 > a:visited {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+>>>>>>> af99add5c334ebfaa28951e9de7c5a58f6762bb2
 .newMenu .menuL1 > a:hover {
   text-decoration: none;
   background: #5c9c35;

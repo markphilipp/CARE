@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "module": "es2015",
+    "module": "commonjs",
     "target": "es5",
     "sourceRoot": ".",
     "sourceMap": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "strictNullChecks": true
   },
   "exclude": [
     "node_modules"

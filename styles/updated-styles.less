@@ -18,9 +18,12 @@ body *{
 }
 
 #bodyContainer {
+	position:relative;
+	overflow:hidden;
 	margin-top:0;
 	border: none;
 }
+
 
 body, td {
 	font-family: @copy-font;
@@ -29,6 +32,7 @@ body, td {
 a, a:link, a:visited, .contentSectionHeader a, .contentSectionHeader a:visited{
 	color:darken(@logo-blue,2%);
 }
+
 
 @import "site-header";
 @import "layout";

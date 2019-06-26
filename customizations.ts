@@ -165,15 +165,16 @@ const makeNavigationMobile = () => {
     const viewportWidth = $(window).width();
     if (viewportWidth < 720 && !$('.mobileNavToggle').length){
       $('.header').append('<div class="mobileNavToggle"><span></span><span></span><span></span></div>');
+
+      $('.mobileNavToggle').on( "click", function() {
+        $('body').toggleClass('mobileNavActive');
+      });
     }
     if (viewportWidth > 720 && $('.mobileNavToggle').length){
       $('.mobileNavToggle').remove();
     }
   }).resize();
-
-  $('.mobileNavToggle').on( "click", function() {
-    $('body').toggleClass('mobileNavActive');
-  });
+  
 };
 
 /**

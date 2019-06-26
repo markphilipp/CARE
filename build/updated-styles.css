@@ -13,6 +13,8 @@ body * {
   box-sizing: border-box;
 }
 #bodyContainer {
+  position: relative;
+  overflow: hidden;
   margin-top: 0;
   border: none;
 }

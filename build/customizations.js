@@ -1,6 +1,12 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
 // These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 /**
+ * Insert mobile viewport meta tag for responsive
+ */
+var insertViewportMetatag = function () {
+    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1">');
+};
+/**
  * Removes all but the few wanted footer links
  */
 var removeFooterLinks = function () {
@@ -46,7 +52,7 @@ var replaceHeader = function () {
  */
 var updateLogoAndPageTitle = function (top) {
     top
-        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\">\n                    <h1>Cullen's Archangel RescuE</h1>\n                      <div class=\"divider\"></div>\n                    <h2>\n                      <span class=\"primaryLogoColor\">iRescue</span>&#183;\n                      <span class=\"secondaryLogoColor\">iFoster</span>&#183;\n                      <span class=\"primaryLogoColor\">iDonate&#183;</span>\n                      <span class=\"secondaryLogoColor\">iAdopt&#183;</span>\n                      <span class=\"primaryLogoColor\">iCARE</span>\n                    </h2>\n                  </div>\n              </div>");
+        .after("<div class=\"header\">\n                  <div class=\"siteLogo\"><a href=\"/\"><img src=\"https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png\" alt=\"logo\" /></a></div>\n                  <div class=\"siteHeader\">\n                    <h1>Cullen's Archangel RescuE</h1>\n                    <h2>\n                      <span class=\"primaryLogoColor\">iRescue</span>\n                      <span class=\"secondaryLogoColor\">iFoster</span>\n                      <span class=\"primaryLogoColor\">iDonate</span>\n                      <span class=\"secondaryLogoColor\">iAdopt</span>\n                      <span class=\"primaryLogoColor\">iCARE</span>\n                    </h2>\n                  </div>\n              </div>");
     $('#logoContainer')
         .on('click', function () { return window.location.pathname = '/'; });
 };
@@ -112,6 +118,23 @@ var makeNavigationHorizontal = function () {
     });
 };
 /**
+ * Mobile navigation
+ */
+var makeNavigationMobile = function () {
+    $(window).on("resize", function () {
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 720 && !$('.mobileNavToggle').length) {
+            $('.header').append('<div class="mobileNavToggle"><span></span><span></span><span></span></div>');
+            $('.mobileNavToggle').on("click", function () {
+                $('body').toggleClass('mobileNavActive');
+            });
+        }
+        if (viewportWidth > 720 && $('.mobileNavToggle').length) {
+            $('.mobileNavToggle').remove();
+        }
+    }).resize();
+};
+/**
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
  * @param name
  */
@@ -125,10 +148,12 @@ var getCookie = function (name) {
 };
 // Run all customizations on load
 jQuery(function () {
+    insertViewportMetatag();
     replaceHeader();
     makeNavigationHorizontal();
     fixHighlightedAnimalHeader();
     highlightedAnimalNames();
     removeFooterLinks();
+    makeNavigationMobile();
 });
 //# sourceMappingURL=customizations.js.map

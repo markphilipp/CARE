@@ -1,18 +1,38 @@
+@import (css) url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
 @import "constants";
-@import (css) url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+
+
+/*****	 GLOBAL OVERRIDES 	*******/  
+.siteWidth{
+	box-sizing: border-box;
+	width:100%;
+	max-width:@max-width;
+}
 
 /*****	  BODY 	*******/
 body {
-	background-color: @lightGrey;
+	background-color:lighten(@logo-green, 40%);
+}
+body *{
+	box-sizing: border-box;
 }
 
 #bodyContainer {
+	position:relative;
+	overflow:hidden;
+	margin-top:0;
 	border: none;
 }
 
+
 body, td {
-	font-family: 'Merriweather Sans', sans-serif;
+	font-family: @copy-font;
 }
+
+a, a:link, a:visited, .contentSectionHeader a, .contentSectionHeader a:visited{
+	color:darken(@logo-blue,2%);
+}
+
 
 @import "site-header";
 @import "layout";

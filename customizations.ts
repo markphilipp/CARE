@@ -1,6 +1,14 @@
 // Author: Mark Philipp - mphilipp17{at}gmail.com
 // These are all such ghetto hacks to make this website customized since it's running on RescueGroups.org's platform.  I'm not proud.
 
+
+/**
+ * Insert mobile viewport meta tag for responsive
+ */
+const insertViewportMetatag = () => {
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1">');
+};
+
 /**
  * Removes all but the few wanted footer links
  */
@@ -58,12 +66,11 @@ const updateLogoAndPageTitle = (top : JQuery) => {
                   <div class="siteLogo"><a href="/"><img src="https://s3.amazonaws.com/imagesroot.rescuegroups.org/webpages/s627nkhwmolutwz.png" alt="logo" /></a></div>
                   <div class="siteHeader">
                     <h1>Cullen's Archangel RescuE</h1>
-                      <div class="divider"></div>
                     <h2>
-                      <span class="primaryLogoColor">iRescue</span>&#183;
-                      <span class="secondaryLogoColor">iFoster</span>&#183;
-                      <span class="primaryLogoColor">iDonate&#183;</span>
-                      <span class="secondaryLogoColor">iAdopt&#183;</span>
+                      <span class="primaryLogoColor">iRescue</span>
+                      <span class="secondaryLogoColor">iFoster</span>
+                      <span class="primaryLogoColor">iDonate</span>
+                      <span class="secondaryLogoColor">iAdopt</span>
                       <span class="primaryLogoColor">iCARE</span>
                     </h2>
                   </div>
@@ -150,6 +157,27 @@ const makeNavigationHorizontal = () => {
 };
 
 /**
+ * Mobile navigation
+ */
+const makeNavigationMobile = () => {
+
+  $(window).on("resize", function () {
+    const viewportWidth = $(window).width();
+    if (viewportWidth < 720 && !$('.mobileNavToggle').length){
+      $('.header').append('<div class="mobileNavToggle"><span></span><span></span><span></span></div>');
+
+      $('.mobileNavToggle').on( "click", function() {
+        $('body').toggleClass('mobileNavActive');
+      });
+    }
+    if (viewportWidth > 720 && $('.mobileNavToggle').length){
+      $('.mobileNavToggle').remove();
+    }
+  }).resize();
+  
+};
+
+/**
  * Credit to: https://gist.github.com/hunan-rostomyan/28e8702c1cecff41f7fe64345b76f2ca for this fn
  * @param name
  */
@@ -165,9 +193,11 @@ const getCookie = (name: string): string | null => {
 
 // Run all customizations on load
 jQuery(() => {
+  insertViewportMetatag();
   replaceHeader();
   makeNavigationHorizontal();
   fixHighlightedAnimalHeader();
   highlightedAnimalNames();
   removeFooterLinks();
+  makeNavigationMobile();
 });
